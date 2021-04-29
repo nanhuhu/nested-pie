@@ -1,0 +1,234 @@
+<!--
+    THIS EXAMPLE WAS DOWNLOADED FROM https://echarts.apache.org/examples/zh/editor.html?c=pie-nest
+-->
+<!DOCTYPE html>
+<html style="height: 100%">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body style="height: 100%; margin: 0">
+        <div id="container" style="height: 100%"></div>
+
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
+        <!-- Uncomment this line if you want to dataTool extension
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5/dist/extension/dataTool.min.js"></script>
+        -->
+        <!-- Uncomment this line if you want to use gl extension
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts-gl@2/dist/echarts-gl.min.js"></script>
+        -->
+        <!-- Uncomment this line if you want to echarts-stat extension
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts-stat@latest/dist/ecStat.min.js"></script>
+        -->
+        <!-- Uncomment this line if you want to use map
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5/map/js/china.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5/map/js/world.js"></script>
+        -->
+        <!-- Uncomment these two lines if you want to use bmap extension
+        <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=<Your Key Here>"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5/dist/extension/bmap.min.js"></script>
+        -->
+
+        <script type="text/javascript">
+var dom = document.getElementById("container");
+var myChart = echarts.init(dom);
+var app = {};
+
+var option;
+
+
+
+myChart.setOption({
+        timeline: {
+                    //loop: false,        
+                    axisType: 'category',
+                    show: true,
+                    autoPlay: true,
+                    playInterval: 1500,
+                    right: 5,
+                    top: 20,
+                    bottom: 20,
+                    width: 50,
+                    orient: 'vertical',
+                    data: ['2011', '2013', '2015', '2018']         
+                },  
+        tooltip: {
+            trigger: 'item',
+            triggerOn: 'mousemove'
+        },
+        toolbox: {
+        //orient: 'vertical',
+        top: 'left',
+        feature: {
+            dataView: {readOnly: false},
+            restore: {},
+            saveAsImage: {}
+        }
+        },
+        options :[
+            {
+        tooltip: {
+        trigger: 'item',
+        formatter: '{a} <br/>{b}: {c} '
+    },
+    series: [
+        //2011
+        {
+            name: 'daughters',
+            type: 'pie',
+            selectedMode: 'single',
+            radius: ['10%', '30%'],
+            label: {
+                position: 'inner',
+                fontSize: 14,
+            },
+            labelLine: {
+                show: true
+            },
+            data: [
+                {value: 398, name: 'Higher:1366RMB'},
+                {value: 207, name: 'Senior:914RMB'},
+                {value: 972, name: 'Junior:839RMB'}, 
+                {value: 1984, name: 'others:555RMB', selected: true}
+            ]
+        },
+        {
+            name: 'sons',
+            type: 'pie',
+            radius: ['40%', '60%'],
+            data: [
+                {value: 423, name: 'Higher:1437RMB'},
+                {value: 300, name: 'Senior:952RMB'},
+                {value: 1184, name: 'Junior:949RMB'},
+                {value: 1201, name: 'others:796RMB'}
+            ]
+        }
+    ]
+},
+//2013
+{
+        tooltip: {
+        trigger: 'item',
+        formatter: '{a} <br/>{b}: {c} '
+    },
+    series: [
+        {
+            name: 'daughters',
+            type: 'pie',
+            selectedMode: 'single',
+            radius: ['10%', '30%'],
+            label: {
+                position: 'inner',
+                fontSize: 14,
+            },
+            labelLine: {
+                show: true
+            },
+            data: [
+                {value: 790, name: 'Higher:1918RMB'},
+                {value: 504, name: 'Senior:1233RMB'},
+                {value: 2108, name: 'Junior:1095RMB'}, 
+                {value: 3575, name: 'others:749RMB', selected: true}
+            ]
+        },
+        {
+            name: 'sons',
+            type: 'pie',
+            radius: ['40%', '60%'],
+            data: [
+                {value: 999, name: 'Higher:1614RMB'},
+                {value: 855, name: 'Senior:1037RMB'},
+                {value: 2228, name: 'Junior:1197RMB'},
+                {value: 2087, name: 'others:1029RMB'}
+            ]
+        }
+    ]
+},
+//2015
+{
+        tooltip: {
+        trigger: 'item',
+        formatter: '{a} <br/>{b}: {c} '
+    },
+    series: [
+        {
+            name: 'daughters',
+            type: 'pie',
+            selectedMode: 'single',
+            radius: ['10%', '30%'],
+            label: {
+                position: 'inner',
+                fontSize: 14,
+            },
+            labelLine: {
+                show: true
+            },
+            data: [
+                {value: 1422, name: 'Higher:1974RMB'},
+                {value: 593, name: 'Senior:1344RMB'},
+                {value: 2417, name: 'Junior:1388RMB'}, 
+                {value: 4143, name: 'others:990RMB', selected: true}
+            ]
+        },
+        {
+            name: 'sons',
+            type: 'pie',
+            radius: ['40%', '60%'],
+            data: [
+                {value: 1627, name: 'Higher:739RMB'},
+                {value: 855, name: 'Senior:767RMB'},
+                {value: 3122, name: 'Junior:1220RMB'},
+                {value: 3252, name: 'others:1365RMB'}
+            ]
+        }
+    ]
+},
+//2018
+{
+        tooltip: {
+        trigger: 'item',
+        formatter: '{a} <br/>{b}: {c} '
+    },
+    series: [
+        {
+            name: 'daughters',
+            type: 'pie',
+            selectedMode: 'single',
+            radius: ['10%', '30%'],
+            label: {
+                position: 'inner',
+                fontSize: 14,
+            },
+            labelLine: {
+                show: true
+            },
+            data: [
+                {value: 1430, name: 'Higher:2264RMB'},
+                {value: 595, name: 'Senior:1293RMB'},
+                {value: 2487, name: 'Junior:1444RMB'}, 
+                {value: 3978, name: 'others:1075RMB', selected: true}
+            ]
+        },
+        {
+            name: 'sons',
+            type: 'pie',
+            radius: ['40%', '60%'],
+            data: [
+                {value: 1398, name: 'Higher:1359RMB'},
+                {value: 669, name: 'Senior:1025RMB'},
+                {value: 2539, name: 'Junior:1355RMB'},
+                {value: 2420, name: 'others:1344RMB'}
+            ]
+        }
+    ]
+}
+]
+});
+
+if (option && typeof option === 'object') {
+    myChart.setOption(option);
+}
+
+        </script>
+    </body>
+</html>
+    
